@@ -247,6 +247,9 @@ hlen(Client, Key) -> numeric(erldis_client:sr_scall(Client, [<<"hlen">>, Key])).
 
 hkeys(Client, Key) -> erldis_client:scall(Client, [<<"hkeys">>, Key]).
 
+hsetnx(Client, Key, Field, Value) ->
+    numeric(erldis_client:sr_scall(Client, [<<"hsetnx">>, Key, Field, Value])).
+
 %% TODO: hvals
 
 hgetall(Client, Key) -> erldis_client:scall(Client, [<<"hgetall">>, Key]).
